@@ -2,13 +2,16 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import PrivateRoute from './utils/PrivateRoute';
+import { AuthProvider } from './context/AuthProvider';
 
 function App() {
   return (
     <div className="App">
       <Router>
+      <AuthProvider>
       <Routes>
-      <Route element = {<HomePage />} path ="/" exact />   
+      <Route element = {<PrivateRoute> <HomePage /> </PrivateRoute>} path ="/" exact />   
       <Route element = {<LoginPage />} path ="/login" />
       <Route
       path="*"
@@ -19,10 +22,7 @@ function App() {
       }
     />
       </Routes>
-
-      
-
-
+      </AuthProvider>
       </Router>
       
     </div>
