@@ -11,7 +11,8 @@ const useAxios = () => {
     const {authToken, setUser, setAuthToken} = useContext(AuthContext)
     const axiosInstance = axios.create({
         baseURL,
-        headers:{Authorization: `Bearer ${authToken?.access}`}
+        headers:{
+            Authorization: `Bearer ${authToken?.access}`}
     });
     // what is interceptor role>
     // what does axios.Instance.interce.... means? How it affects axiosInstance

@@ -25,7 +25,6 @@ export  const AuthProvider = ({children}) => {
         let response = await fetch('https://echaurabackend.netlify.app/token/', {
             method:'POST',
             headers:{
-                'Access-Control-Allow-Origin': '*',
                 'Content-Type':'application/json'
             },
             body:JSON.stringify({'email':e.target.email.value, 'password':e.target.password.value})
