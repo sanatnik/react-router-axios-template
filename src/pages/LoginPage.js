@@ -11,7 +11,7 @@ export default function LoginPage() {
             <div className='m-5'>
             <Form onSubmit={loginUser} >
                 <Form.Group className="mb-3">
-                    <Form.Control name = "email" type="text" placeholder="Enter Username" />
+                    <Form.Control name = "email" type="text" placeholder="Enter Email" />
                 </Form.Group>
 
                 <Form.Group className="mb-3">

@@ -18,7 +18,8 @@ export const PostProvider = ({children}) => {
     }
 
     useEffect(()=> {
-        user?getPosts() : getmedata()
+        
+        user? getPosts(): getmedata()
     }, [])
 
     let getPosts = async() =>{
