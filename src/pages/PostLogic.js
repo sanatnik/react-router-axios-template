@@ -57,7 +57,7 @@ export default function PostLogic() {
          <ul>                
          {comments.length === 0 ?     
             'No Comments to display' : comments.map( (comment) => (
-             <li key={comment.id}>
+             <li className = "mb-5" key={comment.id}>
                  <Comment comment = {comment} />
              </li>
          ))}
