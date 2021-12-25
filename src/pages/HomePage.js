@@ -12,7 +12,7 @@ export default function HomePage() {
             <h1> Home Page </h1>
 
 
-            <ul>
+            <ul className = "mb-5">
             <div className='border border-dark'>
             
                 

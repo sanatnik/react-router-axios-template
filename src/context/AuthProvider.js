@@ -37,10 +37,10 @@ export  const AuthProvider = ({children}) => {
         // if response is valid, setting values of states and storing authtoken in local storage and then sending user to home page
         if(response.status === 200){
             setAuthToken(data)
-            console.log(data)
+            // console.log(data)
             setUser(jwt_decode(data.access))
             localStorage.setItem('authToken', JSON.stringify(data))
-            console.log(JSON.stringify(data))
+            // console.log(JSON.stringify(data))
             navigate('/')
             ShowAlert('You are Logged In', "success") 
         }else{
