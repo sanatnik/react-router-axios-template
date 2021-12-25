@@ -2,20 +2,28 @@ import React, {useContext, useState, useRef} from 'react'
 import AuthContext from '../context/AuthContext'
 import { useNavigate } from 'react-router-dom'
 import { Form, Button } from 'react-bootstrap'
+import { useForm } from "react-hook-form";
 
 export default function LoginPage() {
-    let {loginUser} = useContext(AuthContext)
+    let {loginUser, setLgform} = useContext(AuthContext)
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = (data) => {
+        loginUser(data)
+    }
+
+
     return (
         <div>
             <h1 className='my-3'>Login Page</h1>
             <div className='m-5'>
-            <Form onSubmit={loginUser} >
+            <Form onSubmit={handleSubmit(onSubmit)} >
                 <Form.Group className="mb-3">
-                    <Form.Control name = "email" type="text" placeholder="Enter Username" />
+                    <Form.Control name = "email" type="text" placeholder="Enter Username" ref={register}/>
                 </Form.Group>
 
                 <Form.Group className="mb-3">
-                    <Form.Control name = "password" type="password" placeholder="Password" />
+                    <Form.Control name = "password" type="password" placeholder="Password" ref={register} />
                 </Form.Group>
 
                 <Button variant="primary" type="submit" >
